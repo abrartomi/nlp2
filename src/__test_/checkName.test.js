@@ -1,4 +1,4 @@
-const { validateUrl } = require("../views/js/checkName"); 
+const { validateUrl } = require("../client/views/js/checkName");
 
 describe('URL Validation', () => {
     test('Should return false for invalid URLs', () => {

@@ -62,6 +62,7 @@ This project is a web application that analyzes the sentiment of a given article
 5. **Testing**:
    The project includes basic unit tests using Jest:
    ```bash
+   npx jest
    npm test
    ```
 
