@@ -1,0 +1,115 @@
+$primary-color: #007BFF;
+$secondary-color: #0056b3;
+
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+  box-sizing: border-box;
+}
+
+// Base styles
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e9ecef; // لون خلفية رمادي فاتح
+
+  form {
+    margin: 30px auto;
+    padding: 25px;
+    max-width: 500px; 
+    background-color: #ffffff;
+    border-radius: 15px;
+    @include box-shadow(0 4px 20px rgba(0, 0, 0, 0.1));
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333333; 
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ced4da; 
+      @include box-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+      &:focus {
+        outline: none;
+        border-color: $primary-color; 
+        @include box-shadow(0 0 8px rgba(0, 123, 255, 0.4));
+      }
+    }
+
+    button[type="submit"] {
+      background-color: $primary-color;
+      color: #ffffff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+
+      &:hover {
+        background-color: $secondary-color;
+        @include box-shadow(0 4px 10px rgba(0, 0, 0, 0.2)); 
+      }
+    }
+  }
+}
+
+#loader {
+  border: 14px solid #e9ecef;
+  border-top: 14px solid $primary-color;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1.5s linear infinite;
+  margin: 30px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#error {
+  @include box-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #ffc107; 
+  color: #212529; 
+  border-radius: 12px;
+  text-align: center; 
+}
+
+#results {
+  margin: 30px auto;
+  padding: 25px;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  @include box-shadow(0 4px 15px rgba(0, 0, 0, 0.1));
+
+  h2 {
+    margin-top: 0;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 12px;
+      font-size: 18px;
+      color: #495057; 
+    }
+  }
+}
